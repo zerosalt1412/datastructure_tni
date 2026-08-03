@@ -1,0 +1,53 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class LabQueue4 {
+	public static Queue<String> q_printer = new ArrayDeque<String>();
+	public static Scanner input = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Press 1 Add a file to the queue");
+		System.out.println("Press 2 View the file");
+		System.out.println("Press 3 Print the file");
+		
+		while (true) {
+			System.out.print("\nEnter an option: ");
+			int option = input.nextInt();
+			if (option == 1) {  addFile();  } 
+			else if (option == 2) { viewNextFile();  } 
+			else if (option == 3) { printFile(); } 
+			else { System.out.println("Exit"); break; }
+		}
+	}
+	
+	public static void addFile() {
+        input.nextLine(); 
+
+        System.out.print("Enter file name: ");
+        String file = input.nextLine();
+
+        q_printer.offer(file);
+
+        System.out.println("Files in queue => " + q_printer);
+    }
+
+    public static void viewNextFile() {
+        if (q_printer.isEmpty()) {
+            System.out.println("No file in queue");
+        } else {
+            System.out.println("Next file: " + q_printer.peek());
+            System.out.println("Files in queue: " + q_printer);
+        }
+    }
+
+    public static void printFile() {
+        if (q_printer.isEmpty()) {
+            System.out.println("No file in queue");
+        } else {
+            System.out.println("Printing file: " + q_printer.poll());
+            System.out.println("Files in queue: " + q_printer);
+        }
+    }
+}
