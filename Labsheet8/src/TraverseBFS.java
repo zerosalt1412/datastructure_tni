@@ -14,11 +14,8 @@ public class TraverseBFS {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		Queue<Node> queue = new ArrayDeque<Node>();
 		queue.add(node);
-		
 		while (!queue.isEmpty()) {
-			int levelSize = queue.size();
-			
-
+		int levelSize = queue.size();
 			for (int i = 0; i < levelSize; i++) {
 				Node current = queue.poll();
 
@@ -30,9 +27,7 @@ public class TraverseBFS {
 				}
 				list.add(current.data);
 			}
-			
 		}
-
 		return list;
 	}
 

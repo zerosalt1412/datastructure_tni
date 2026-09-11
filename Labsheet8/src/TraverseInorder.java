@@ -6,7 +6,7 @@ public class TraverseInorder {
 
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
-		tree.createTree3();    // Try to test with createTree2() and createTree3()
+		tree.createTree1();
 		tree.printTree(tree.getRoot(), 0);
 		System.out.println();
 		System.out.println("Inorder = " + traversal(tree.getRoot()));
